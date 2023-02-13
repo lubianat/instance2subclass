@@ -1,0 +1,17 @@
+SELECT DISTINCT
+## Remove ?item and ?itemLabel for query in quickstatements format
+#?item ?itemLabel
+?itemQIDWithSignal
+?property
+(REPLACE(STR(?target), ".*Q", "Q") AS ?target_qid)
+
+WHERE 
+{
+  VALUES ?property {"P31" "P279"} 
+  ?item wdt:P31 ?target.
+  ?target wdt:P279* wd:{{base_id}}.
+  BIND(SUBSTR(STR(?item), STRLEN("http://www.wikidata.org/entity/Q")) AS ?itemQID) .
+  BIND(IF(?property = "P31", CONCAT("-",STR(?itemQID)), ?itemQID) as ?itemQIDWithSignal)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+
+}
