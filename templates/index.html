@@ -7,17 +7,23 @@ Searchy
 {% block main %}
 
 <div class="container">
-  It is fairly common on Wikidata that "instance of" relations are used in place of "subclass of" relations.
+  <p> It is fairly common on Wikidata that "instance of" relations are used in place of "subclass of" relations.
 
-  To understand the whys, I recommend reading Freddy Brasileiro's <a
-    href="https://nemo.inf.ufes.br/wp-content/papercite-data/pdf/applying_a_multi_level_modeling_theory_to_assess_taxonomic_hierarchies_in_wikidata_2016.pdf"
-    target="_blank">Applying a Multi-Level
-    Modeling Theory to
-    Assess Taxonomic Hierarchies in Wikidata</a>.
+    To understand the whys, I recommend reading Freddy Brasileiro's <a
+      href="https://nemo.inf.ufes.br/wp-content/papercite-data/pdf/applying_a_multi_level_modeling_theory_to_assess_taxonomic_hierarchies_in_wikidata_2016.pdf"
+      target="_blank">Applying a Multi-Level
+      Modeling Theory to
+      Assess Taxonomic Hierarchies in Wikidata</a>.</p>
 </div>
 
 {% if form.wikidata_id.data %}
-<a href="{{qs_url}}" target="_blank"><button type="button" class="btn btn-primary">Go to Quickstatements</button></a>
+<div class="container">
+  <a href="{{qs_url}}" target="_blank">
+    <button type="button" class="btn btn-primary">Go to
+      Quickstatements</button>
+  </a>
+</div>
+
 
 {% endif %}
 

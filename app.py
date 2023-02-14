@@ -17,7 +17,6 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 HERE = Path(__file__).parent.resolve()
 SPARQL = HERE.joinpath("sparql").resolve()
 
-
 # Ensure responses aren't cached
 @app.after_request
 def after_request(response):
