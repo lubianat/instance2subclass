@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Wikidata OntoFix
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <p>Wikidata OntoFix: Fixing ontological relations on Wikidata.</p>
+
+  <h2> Instance To Subclass </h2>
+  <p> It is fairly common on Wikidata that "instance of" relations are used in place of "subclass of" relations.
+
+    To understand the whys, I recommend reading Freddy Brasileiro's <a
+      href="https://nemo.inf.ufes.br/wp-content/papercite-data/pdf/applying_a_multi_level_modeling_theory_to_assess_taxonomic_hierarchies_in_wikidata_2016.pdf"
+      target="_blank">Applying a Multi-Level
+      Modeling Theory to
+      Assess Taxonomic Hierarchies in Wikidata</a>.</p>
+</div>
+
+{% if form.wikidata_id.data %}
+<div class="container">
+  <a href="{{qs_url}}" target="_blank">
+    <button type="button" class="btn btn-primary">Go to
+      Quickstatements</button>
+  </a>
+</div>
+
+
+{% endif %}
+
+
+<div class="container">
+
+  <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.wikidata_id.label }}<br>
+      {{ form.wikidata_id(size=32) }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</div> {% endblock %}

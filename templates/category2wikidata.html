@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Wikidata OntoFix
+{% endblock %}
+
+{% block main %}
+
+<div class="container">
+  <p>Wikidata OntoFix: Fixing ontological relations on Wikidata.</p>
+
+  <h2> Category to Wikidata </h2>
+</div>
+
+{% if form.wikipedia_category.data %}
+
+<div class="container">
+  <a href="{{qs_url}}" target="_blank">
+    <button type="button" class="btn btn-primary">Go to Quickstatements</button>
+  </a>
+</div>
+
+{% endif %}
+
+
+<div class="container">
+
+  <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.wikipedia_category.label }}<br>
+      {{ form.wikipedia_category(size=32) }}
+    </p>
+    <p>
+      {{ form.P279_value.label }}<br>
+      {{ form.P279_value(size=32) }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</div> {% endblock %}

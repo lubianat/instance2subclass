@@ -21,7 +21,7 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
   </script>
   <link rel="icon" type="image/png" href="/static/logo.svg" />
-  <title>Instance2Subclass: {% block title %}{% endblock %}</title>
+  <title>Wikidata OntoFix {% block title %}{% endblock %}</title>
 
 </head>
 
@@ -29,14 +29,19 @@
 
   <nav class="navbar navbar-expand-md navbar-light bg-light border">
     <a class="navbar-brand" href="/">
-      Instance2Subclass
-
+      Wikidata OntoFix
     </a>
     <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
       data-target="#navbar" data-toggle="collapse" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto mt-2">
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('instance2subclass') }}">instance2subclass</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('category2wikidata') }}">category2wikidata</a></li>
 
+    </div>
   </nav>
 
   {% if get_flashed_messages() %}
